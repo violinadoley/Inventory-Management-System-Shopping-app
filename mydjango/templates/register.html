@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" href="boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Register</title>
+</head>
+<style>
+    .btn-submit {
+        width: 100%;
+        border-radius: 30px;
+        height: 45px;
+        background-color: rgb(216, 216, 187);
+        cursor: pointer;
+        color: #0a0a0a;
+        font-size: 17px;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+        background-color: beige;
+        transform: translateY(-3px);
+    }
+
+    .btn-submit a {
+        text-decoration: none;
+        color: #0a0a0a;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="top-header">
+                <header>New User</header>
+            </div>
+            <form action="/register" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="input" placeholder="Username" Required>
+                    <br><br>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="input" placeholder="E-mail" Required>
+                    <br><br>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" class="input" placeholder="Password" Required>
+                    <br><br>
+                </div>
+                <button type="Submit" class="btn-submit">Register</button>
+            </form>
+            <div>
+
+                <div>
+                    <span>Already have an account?</span>
+                </div>
+                <div>
+                    <label><a href="/signin">Login</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+body {
+
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-image: linear-gradient(to right, #1B130D, #362016, #1B130D, #7B5532);
+    height: 65px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: 0.3s;
+}
+
+.navbar {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.navbar a {
+    position: relative;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: 4px;
+    height: 3px;
+    background: #c2e6f0;
+
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.navbar a:hover::before,
+.navbar .active::before {
+    width: 50%;
+}
+
+.navbar a:hover,
+.navbar .active {
+    color: #757575;
+}
+
+header a:hover {
+    color: #757575;
+}
+
+header .container-1 {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    padding: 0;
+    margin-right: 7px;
+    border-radius: 0px;
+    box-shadow: none;
+    overflow: none;
+}
+
+header .icon {
+    display: flex;
+    flex-direction: column;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+}
+
+header .container-1 .dropdown-content {
+    display: none;
+    position: absolute;
+    bottom: -90px;
+    left: -50px;
+    z-index: 1; 
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;
+}
+
+header .container-1 .dropdown-content a{
+    color: black;
+}
+
+header .container-1:hover .dropdown-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Wishlist, .Logout{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 7px;
+}
