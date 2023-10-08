@@ -1,68 +1,141 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">  🛒 &nbsp; Shopping App 🛒 </h1>
 
-## Available Scripts
+> Built with MERN stack (MongoDB, Express, React and Node).
 
-In the project directory, you can run:
+> Shopping App, it started for The Odin Project practice
+> Started from here [curriculum](https://www.theodinproject.com/courses/nodejs/lessons/inventory-application)
+> The Code can be found [here](https://github.com/hamohuh/inventory-application)
 
-### `npm start`
+### <h2 align="center"> ⚡️⚡️⚡️ &nbsp; [Live Demo](https://afternoon-atoll-93127.herokuapp.com/) ⚡️⚡️⚡️ </h2>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📜 &nbsp; Table of contents
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [Main Features](#--main-features)
+- [Technologies](#--technologies)
+- [Key Concepts](#--key-concepts)
+- [UML Diagram](#--uml-diagram)
+- [Setup](#--setup)
+- [ENV](#-ENV)
 
-### `npm test`
+## 🚩 &nbsp; Main Features
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> This App was made to track the order state since the customer place it
+> once it's shipped the seller mark it as shipped, and then the shipper mark it as delivered.
 
-### `npm run build`
+#### Project methodology
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Register and signin system**
+  - Everyone is registered as a customer.
+  - Customers can apply to be sellers. [Picture](https://imgur.com/a0Jcmtf)
+  - Shipper only created by the Admin.
+  - Admins can create any other admins.
+- **Product life cycle**
+  - A seller add a product.
+  - A customer order some products, number in stock decreases.
+  - The customer tracks the order's state since it's placed. [Picture](https://imgur.com/9DqrnjF)
+  - Depends on the address the customer provided, the area shipper get notification. [Picture](https://imgur.com/Q2zWau2)
+  - The product's seller get a notification about the order. [Picture](https://imgur.com/2ZnjDLA)
+  - The shipper pick the product, the seller mark it as shipped.
+  - The shipper deliver the order, and mark it as delivered.
+  - The customer may want to turn it back (to be done).
+- **Other facilities**
+  - Users can edit their account info. [Picture](https://imgur.com/gAaF4rm)
+  - Users can track their order's state. [Picture](https://imgur.com/9DqrnjF)
+  - Users can add, delete or edit addresses. [Picture](https://imgur.com/YUWHMko)
+  - Users can have a wishlist with any amount of products. [Picture](https://imgur.com/XVBMsAB)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### Users roles - [Dashboard Picture](https://imgur.com/hn5QKlp)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Customer**
+  - Sign up & login.
+  - Switch the account to seller. [Picture](https://imgur.com/a0Jcmtf)
+  - Purchase order of any amount of products.
+  - Tracking order state. [Picture](https://imgur.com/9DqrnjF)
+  - Return order (To do).
+- **Seller** -> all above plus.
+  - Add and edit his own products.
+  - Receive notifications of the new orders the customer make (only his products).
+  - Mark the orders the customers make as shipped when the Shipper takes it.
+- **Shipper** -> all above plus
+  - Receive notifications of orders (According to the customer address provided).
+  - Ship orders to the customer's address and mark the order as Delivered.
+- **Admin** -> all above plus
+  - Add, Edit and Delete categories.
+  - Add, Edit and Delete any products.
+  - Create other Admins.
+  - Create Shippers and add Shipper area he will be responsible for.
+  - Restrict any user from all the permissions.
 
-### `npm run eject`
+## 💹 &nbsp; Technologies
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> Project is created with:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Express
+- Mongoose
+- Json Web Token (For authentication)
+- bcryptjs (for data encryption)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Frontend
 
-## Learn More
+- React JS
+- Redux (Manage app state)
+- React-router (To handle routing)
+- Axios (For http requests)
+- React Bootstrap
+- React-toastify (To handle success and error messages)
+- Formik (To handle forms state and validation)
+- Yup (To handle client side form validation)
+- Sass
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 💡 &nbsp; Key Concepts
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- MVC (Model-View-Controller)
+- CRUD operations
+- Authentication system
+- Encrypting passwords
+- Images handling using multer
+- OOP (Object Oriented Programming)
 
-### Code Splitting
+## 📈 &nbsp; UML Diagram
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+> It's my first time to design a UML so maybe it sucks :D
 
-### Analyzing the Bundle Size
+![UML Diagram](https://i.imgur.com/vGa9f8e.jpg)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## 💻 &nbsp; Setup
 
-### Making a Progressive Web App
+To run this project, install it locally using npm:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```
+$ cd inventory-application
+$ npm install (install backend dependencies)
+$ cd views
+$ npm install (install frontend dependencies)
+$ cd ..
+$ npm run server (for Node server side development)
+$ npm run client (for React client side development)
+$ npm run dev (for both client and server side)
+```
+## &nbsp; ENV
+- PORT=
+- DB_URI=
+- JWT_SECRET=
+- CLOUDINARY_CLOUD_NAME=
+- CLOUDINARY_API_KEY=
+- CLOUDINARY_API_ESCRET=
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+# Author
 
-### Deployment
+👤 &nbsp; **Mohamed Elashmawy**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Twitter: [@hamohuh](https://twitter.com/hamohuh)
+- Github: [@moelashmawy](https://github.com/moelashmawy)
+- Linkedin: [@moelashmawy](https://www.linkedin.com/in/moelashmawy/)
+- Email: [ashmawy894@gmail.com](mailto:ashmawy894@gmail.com)
 
-### `npm run build` fails to minify
+## 📝 &nbsp; License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- This project is [MIT](./LICENSE) licensed.
